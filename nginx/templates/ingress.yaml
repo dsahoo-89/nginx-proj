@@ -9,8 +9,8 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/ip-address-type: ipv4
-    alb.ingress.kubernetes.io/healthcheck-path: /health
-    alb.ingress.kubernetes.io/inbound-cidrs: "{{ .Values.inbound_cidrs }}"
+    alb.ingress.kubernetes.io/healthcheck-path: /
+    alb.ingress.kubernetes.io/inbound-cidrs: "0.0.0.0/0"
 spec:
   rules:
     - host:
