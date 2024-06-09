@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx1
+  name: nginx
   namespace: argocd
 spec:
   destination:
     name: arn:aws:eks:ap-south-1:130705418859:cluster/stage-devseccops-eks-cluster
-    namespace: stage-nginx1-namespace
+    namespace: stage-nginx-namespace
   project: stage-devseccops
   source:
-    path: nginx1
+    path: nginx
     repoURL: https://github.com/nishantguptaxe/nginx-service-configs.git
     targetRevision: stage
   syncPolicy:

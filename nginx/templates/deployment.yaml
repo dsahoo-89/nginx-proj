@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx1
+  name: nginx
   labels:
-    app: nginx1
+    app: nginx
     company: devseccops
 spec:
   replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: external-app
-      app.kubernetes.io/instance: nginx1
+      app.kubernetes.io/instance: nginx
   template:
     metadata:
       labels:
         app.kubernetes.io/name: external-app
-        app.kubernetes.io/instance: nginx1
+        app.kubernetes.io/instance: nginx
     spec:
-      serviceAccountName: stage-nginx1-sa
+      serviceAccountName: stage-nginx-sa
       securityContext: {}
       containers:
-        - name: nginx1
+        - name: nginx
           securityContext: {}
           image: nginx:latest
           imagePullPolicy: 'Always'

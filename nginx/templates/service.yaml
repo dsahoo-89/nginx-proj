@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx1
+  name: nginx
 spec:
   type: NodePort
   ports:
@@ -11,4 +11,4 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: external-app
-    app.kubernetes.io/instance: nginx1
+    app.kubernetes.io/instance: nginx
